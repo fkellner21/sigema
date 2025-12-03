@@ -1,0 +1,26 @@
+version: "3.8"
+
+services:
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    restart: always
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:sqlserver://sigemadb.mssql.somee.com:1433;databaseName=sigemadb;packetSize=4096;user=fra_kell_SQLLogin_1;password=1eypgbrz8v;persistSecurityInfo=false;TrustServerCertificate=True
+      SPRING_DATASOURCE_USERNAME: fra_kell_SQLLogin_1
+      SPRING_DATASOURCE_PASSWORD: 1eypgbrz8v
+      SPRING_DATASOURCE_DRIVER_CLASS_NAME: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    ports:
+      - "8080:8080"
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    depends_on:
+      - backend
+    restart: always
+    ports:
+      - "80:80"
