@@ -49,7 +49,7 @@ public class SecurityConfig {
         config.setAllowedOrigins(List.of(
                 "http://localhost:4200",
                 "http://localhost:57210",
-                "http://127.0.0.1:4200"
+                "http://http://44.220.190.83" //url de la instancia ********
         ));
         config.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS", "PATCH"));
         config.setAllowedHeaders(List.of("*"));
@@ -74,7 +74,8 @@ public class SecurityConfig {
                 registry.addMapping("/api/**")
                         .allowedOrigins(
                                 "http://localhost:4200",
-                                "http://127.0.0.1:4200" //url de la instancia ********
+                                "http://127.0.0.1:4200", 
+                                "http://44.220.190.83" //url de la instancia ********
 
                         )
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
