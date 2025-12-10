@@ -22,7 +22,7 @@ RUN rm -rf /etc/nginx/conf.d/default.conf
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 # Copiar la app Angular compilada
-COPY --from=build /app/dist/browser /usr/share/nginx/html
+COPY --from=build /app/dist/ /usr/share/nginx/html
 
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
