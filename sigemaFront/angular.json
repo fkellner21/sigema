@@ -34,8 +34,7 @@
                             "leaflet",
                             "leaflet.markercluster",
                             "sweetalert2"
-                        ],
-                        "proxyConfig": "proxy.conf.json"
+                        ]
                     },
                     "configurations": {
                         "production": {
